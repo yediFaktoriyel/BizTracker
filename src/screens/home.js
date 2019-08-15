@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react';
 import {
   Button,
+  Dimensions,
+  Image,
   SafeAreaView,
   ScrollView,
   View,
@@ -8,6 +10,11 @@ import {
 } from 'react-native';
 
 import styles from "../styles";
+import AirFreight from "../businesses/airFreight"
+
+const airFreightCover = require("../../assets/Air-Freight.jpg");
+const x = Dimensions.get("window").width;
+const y = Dimensions.get("window").height;
 
 class Home extends React.Component {
 
@@ -33,18 +40,12 @@ class Home extends React.Component {
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
-            <View style={styles.body}>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionDescription}>
-                  This will be the home.
-                </Text>
-                <Button
-                mode="contained"
-                onPress={() =>this.props.navigation.navigate('settings')}
-                title="Settings"
-                />
-              </View>
-            </View>
+
+            <Text style={styles.sectionTitle}>
+              Air Freight
+            </Text>
+            <AirFreight />
+
           </ScrollView>
         </SafeAreaView>
       </Fragment>
